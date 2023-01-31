@@ -10,7 +10,7 @@ setup(
         'tensorflow',
         'pymatgen',
         'pyxtal',
-        'kgcnn'
+        'kgcnn@git+https://github.com/aimat-lab/gcnn_keras'
     ],
     packages=find_packages(
         where='src', 
