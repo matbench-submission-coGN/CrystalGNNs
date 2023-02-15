@@ -11,8 +11,7 @@ try:
     periodic_table_csv = importlib.resources.files(crystalgnns.periodic_table) / 'periodic_table.csv'
 except:
     # < Python 3.9
-    with importlib.resources.path(crystalgnns.periodic_table,
-                                  'periodic_table.csv') as file_name:
+    with importlib.resources.path(crystalgnns.periodic_table, 'periodic_table.csv') as file_name:
         periodic_table_csv = file_name
 
 
