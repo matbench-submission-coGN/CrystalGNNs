@@ -33,7 +33,7 @@ class MatbenchDataset:
         if not cache_dir.is_dir():
             cache_dir.mkdir(exist_ok=True)
         self.matbench = MatbenchBenchmark(autoload=False)
-        self.dataset_names = list(self.matbench.tasks.mapping.keys())
+        self.dataset_names = list(self.matbench.tasks_map.keys())
 
     @staticmethod
     def crystal_iterator(crystal_series: pd.Series):
