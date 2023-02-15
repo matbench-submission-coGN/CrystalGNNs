@@ -6,7 +6,15 @@ import crystalgnns.periodic_table
 # CSV file is downloaded from:
 # https://pubchem.ncbi.nlm.nih.gov/rest/pug/periodictable/CSV/?response_type=save&response_basename=PubChemElements_all
 
-periodic_table_csv = importlib.resources.files(crystalgnns.periodic_table) / 'periodic_table.csv'
+try:
+    # >= Python 3.9
+    periodic_table_csv = importlib.resources.files(crystalgnns.periodic_table) / 'periodic_table.csv'
+except:
+    # < Python 3.9
+    with importlib.resources.path(crystalgnns.periodic_table,
+                                  'periodic_table.csv') as file_name:
+        periodic_table_csv = file_name
+
 
 class PeriodicTable():
     """Utility class to provide further element type information for crystal graph node embeddings."""

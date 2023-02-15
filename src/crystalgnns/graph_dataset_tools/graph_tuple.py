@@ -4,6 +4,7 @@ from typing import List, Iterable
 from functools import cached_property
 from networkx import MultiDiGraph
 from itertools import islice
+from typing import Dict
 
 
 class GraphTuple:
@@ -18,9 +19,9 @@ class GraphTuple:
         num_nodes: np.ndarray,
         num_edges: np.ndarray,
         edge_indices: np.ndarray,
-        node_attributes: dict[str, np.ndarray],
-        edge_attributes: dict[str, np.ndarray],
-        graph_attributes: dict[str, np.ndarray],
+        node_attributes: Dict[str, np.ndarray],
+        edge_attributes: Dict[str, np.ndarray],
+        graph_attributes: Dict[str, np.ndarray],
     ):
         """Initializes GraphTuple.
 
