@@ -104,7 +104,8 @@ def structure_to_empty_graph(structure: Union[Structure, pyxtal], symmetrize=Fal
         for node_idx, site in enumerate(structure.sites):
             graph.add_node(node_idx, atomic_number=site.specie.number,
                     frac_coords=frac_coords[node_idx],
-                    coords=site.coords)
+                    coords=site.coords,
+                    **site.properties)
         setattr(graph, 'lattice_matrix', structure.lattice.matrix)
         return graph
 
